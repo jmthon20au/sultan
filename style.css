@@ -1,0 +1,316 @@
+body {
+    background-color: #f0f2f5;
+    font-family: 'Cairo', sans-serif;
+    color: #333;
+    direction: rtl;
+    text-align: right;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 i {
+    margin: 0 10px;
+    color: #28a745;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #007bff;
+    margin: 10px auto 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236c757d' d='M6 8.5L2.5 5h7L6 8.5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left 15px center;
+    padding-left: 35px;
+}
+
+.amount-group {
+    position: relative;
+}
+
+.amount-group input {
+    padding-right: 35px;
+}
+
+.currency-symbol {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1.1rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.submit-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.alert-message {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.hidden {
+    display: none !important;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Loading Spinner */
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #333;
+}
+
+.modal-icon {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.success-icon {
+    color: #28a745;
+}
+
+.error-icon {
+    color: #dc3545;
+}
+
+.modal-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.modal-button:hover {
+    background-color: #0056b3;
+}
+
+/* التجاوب مع أحجام الشاشات الصغيرة */
+@media (max-width: 576px) {
+    .container {
+        padding: 20px;
+        margin: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    input, select, .submit-btn {
+        font-size: 0.9rem;
+    }
+}
+/* تنسيق شعار الموقع */
+.header-logo-container {
+    text-align: center; /* لمحاذاة الشعار في المنتصف */
+    margin-bottom: 20px; /* مسافة بين الشعار والعنوان */
+}
+
+.header-logo {
+    width: 80px; /* حجم الشعار، يمكنك تعديله */
+    height: auto; /* يحافظ على نسبة الأبعاد */
+    border-radius: 50%; /* لجعل الشعار دائريًا إذا كانت الصورة مناسبة */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* ظل خفيف لإبرازه */
+    transition: transform 0.3s ease-in-out; /* تأثير التحويل عند الهوفر */
+}
+
+.header-logo:hover {
+    transform: scale(1.1) rotate(5deg); /* يكبر قليلاً ويدور عند الهوفر */
+}
+
+/* تعديل تنسيق العنوان ليكون مناسبا بعد نقل اللوجو */
+h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 25px;
+    font-size: 2.2rem;
+    position: relative;
+    display: block; /* نجعله block بدلا من flex الآن */
+}
+
+/* هذا الجزء يعود كما كان لتزيين الخط تحت العنوان */
+h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #007bff;
+    margin: 10px auto 0;
+}
+
+/* إزالة الأيقونة من الـ h1 إذا كانت لا تزال موجودة */
+h1 i { 
+    display: none !important;
+}
+/* رسالة الخطأ */
+.error-message {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: none;
+}
